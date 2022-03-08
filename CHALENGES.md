@@ -13,7 +13,7 @@
 ROTAS
 
 - [x] GET todos os abrigos (PUBLIC)
-- [ ] GET/id - um abrigo (PUBLIC)
+- [x] GET/id - um abrigo (PUBLIC)
 - [x] POST - cadastrar novo abrigo (PRIVATE)
 - [ ] PUT/id - Editar um abrigo (PRIVATE)
 - [ ] DELETE - Excluir um abrigo (PRIVATE)

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createShelterController = void 0;
+const shelterRepository_1 = require("../../repository/implementarions/shelterRepository");
+const CreateShelterUseCase_1 = require("./CreateShelterUseCase");
+const CreateShelterController_1 = require("./CreateShelterController");
+const shelterRepository = shelterRepository_1.ShelterRepository.getInstance();
+const createShelterUseCase = new CreateShelterUseCase_1.CreateShelterUseCase(shelterRepository);
+const createShelterController = new CreateShelterController_1.CreateShelterController(createShelterUseCase);
+exports.createShelterController = createShelterController;

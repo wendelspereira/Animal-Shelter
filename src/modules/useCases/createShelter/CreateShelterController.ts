@@ -6,7 +6,8 @@ class CreateShelterController {
 
   handle(request: Request, response: Response): Response {
     const { name } = request.body;
-    this.createShelterUseCase.execute({ name });
+    this.createShelterUseCase.execute(name);
+
     return response.status(201).send();
   }
 }

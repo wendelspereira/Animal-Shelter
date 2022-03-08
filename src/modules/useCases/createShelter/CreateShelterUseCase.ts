@@ -1,19 +1,18 @@
-
-import {IShelterDTO, IShelterRepository } from "../../repository/IShelterRepository"
+import {
+  IShelterDTO,
+  IShelterRepository,
+} from "../../repository/IShelterRepository";
 
 class CreateShelterUseCase {
-    constructor(private shelterRepository: IShelterRepository ){}
-    execute({id, name}: IShelterDTO){
-        const shelterAlreadyExistis = this.shelterRepository.findById(id)
-        if(shelterAlreadyExistis){
-            throw new Error("Shelter already exists!")
-        }
+  constructor(private shelterRepository: IShelterRepository) {}
+  execute(name: string): void {
+    const shelterAlreadyExistis = this.shelterRepository.findByName(name);
 
-        this.shelterRepository.create({id, name})
+    if (shelterAlreadyExistis) {
+      throw new Error("Shelter already exists!");
     }
+    this.shelterRepository.create({ name });
+  }
 }
 
-export { CreateShelterUseCase }
-
-
-
+export { CreateShelterUseCase };

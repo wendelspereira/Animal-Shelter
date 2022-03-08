@@ -1,13 +1,17 @@
-import {Shelter} from '../model/shelter'
+import { Shelter } from "../model/shelter";
 
 interface IShelterDTO {
-    name: string;
+  id?: string;
+  name: string;
 }
 
-interface IShelterRepository{
-    create: ({name}: IShelterDTO)=>void
-    list: () => Shelter[]
-    findById: (id: string) => Shelter | undefined
+interface IShelterRepository {
+  create: ({ name }: IShelterDTO) => void;
+  list: () => Shelter[];
+  findByName: (name: string) => Shelter | undefined;
+  findById: (id: string) => Shelter | undefined;
+  update: ({ id, name }: IShelterDTO) => void;
+//   delete: (id: string) => void;
 }
 
-export {IShelterDTO, IShelterRepository}
+export { IShelterDTO, IShelterRepository };

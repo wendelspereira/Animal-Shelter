@@ -1,8 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Shelter = void 0;
+const uuidv4_1 = require("uuidv4");
 class Shelter {
-    id?: string;
-    name!: string;
     // address: {
     //     street: string;
     //     number: string;
@@ -15,12 +15,10 @@ class Shelter {
     // description: string;
     // opening_Hours: string;
     // created_at: Date;
-
-    constructor(){
-        if(!this.id){
-            this.id = uuidv4()
+    constructor() {
+        if (!this.id) {
+            this.id = (0, uuidv4_1.uuid)();
         }
-    } 
+    }
 }
-
-export {Shelter}
+exports.Shelter = Shelter;

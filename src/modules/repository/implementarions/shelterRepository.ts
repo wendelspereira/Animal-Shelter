@@ -23,6 +23,7 @@ class ShelterRepository implements IShelterRepository {
 
   list(): Shelter[] {
     return this.shelters;
+    
   }
 
   findByName(name: string): Shelter | undefined {
@@ -37,11 +38,18 @@ class ShelterRepository implements IShelterRepository {
 
   update({ id, name }: IShelterDTO): void {
     this.shelters.forEach((shelter) => {
+
       if (shelter.id === id) {
         Object.assign(shelter, { name });
         return;
       }
     });
+  }
+  delete(id: string): void {
+    const index = this.shelters.findIndex((shelter) => {
+      return shelter.id === id;
+    });
+    if (index !== -1) this.shelters.splice(index, 1);
   }
 }
 

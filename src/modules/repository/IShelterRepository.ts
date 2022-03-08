@@ -11,7 +11,7 @@ interface IShelterRepository {
   findByName: (name: string) => Shelter | undefined;
   findById: (id: string) => Shelter | undefined;
   update: ({ id, name }: IShelterDTO) => void;
-//   delete: (id: string) => void;
+  delete: (id: string) => void;
 }
 
 export { IShelterDTO, IShelterRepository };
